@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Game Night{% endblock %} | What Should We Play?</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <nav>
+    <strong>🎲 What Should We Play Tonight?</strong>
+    <a href="{{ url_for('index') }}">All games</a>
+    <a href="{{ url_for('pick') }}">Pick a game</a>
+    <a href="{{ url_for('new_game') }}">Add a game</a>
+  </nav>
+  <main>
+    {# Child templates fill in this block #}
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>

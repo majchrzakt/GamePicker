@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Add a game{% endblock %}
+{% block content %}
+<h1>Add a game</h1>
+{% if error %}<p class="error">{{ error }}</p>{% endif %}
+<form method="post">
+  <label>Name <input name="name" required></label>
+  <label>Min players <input name="min_players" type="number" min="1" required></label>
+  <label>Max players <input name="max_players" type="number" min="1" required></label>
+  <label>Minutes to play <input name="play_minutes" type="number" min="1" required></label>
+  <label>Complexity (1-5) <input name="complexity" type="number" min="1" max="5" value="2" required></label>
+  <button>Save game</button>
+</form>
+{% endblock %}

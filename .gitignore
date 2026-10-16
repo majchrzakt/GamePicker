@@ -1,0 +1,8 @@
+.venv/
+*.db
+__pycache__/
+.pytest_cache/
+CANVAS_HANDOFF.md
+CLAUDE.md
+LESSON.md
+tmp.py

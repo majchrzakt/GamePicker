@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Pick a game{% endblock %}
+{% block content %}
+<h1>What should we play tonight?</h1>
+{# GET form: values land in the URL as ?players=4&minutes=60 #}
+<form method="get">
+  <label>Players <input name="players" type="number" min="1" value="{{ players or '' }}" required></label>
+  <label>Minutes available <input name="minutes" type="number" min="1" value="{{ minutes or '' }}" required></label>
+  <button>Find games</button>
+</form>
+{% if results is not none %}
+  {% if results %}
+  <ol>
+    {% for game in results %}
+    <li><strong>{{ game.name }}</strong> &mdash; {{ game.average_rating() }} ★, {{ game.play_minutes }} min</li>
+    {% endfor %}
+  </ol>
+  {% else %}
+  <p>Nothing fits. Try more time, or add a game!</p>
+  {% endif %}
+{% endif %}
+{% endblock %}
