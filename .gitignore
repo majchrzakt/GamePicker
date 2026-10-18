@@ -2,6 +2,7 @@
 *.db
 __pycache__/
 .pytest_cache/
+share/
 CANVAS_HANDOFF.md
 CLAUDE.md
 LESSON.md
