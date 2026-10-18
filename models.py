@@ -28,7 +28,7 @@ class Game(BaseModel):
     min_players = IntegerField()
     max_players = IntegerField()
     play_minutes = IntegerField()
-    complexity = IntegerField(default=2)  # 1 (easy) to 5 (heavy)
+    complexity = IntegerField(default=2)  # 1 (easy) to 5 (hard)
 
     def save(self, *args, **kwargs):
         """DATABASE HOOK: runs every time a Game is saved.
